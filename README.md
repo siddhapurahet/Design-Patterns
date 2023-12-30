@@ -1,2 +1,2 @@
-This Repository contains the code for Design Patterns which are used for common occuring problems in Softare Development. &nbsp
+This Repository contains the code for Design Patterns which are used for common occuring problems in Softare Development. <br/>
 The code has been pushed to master branch.
