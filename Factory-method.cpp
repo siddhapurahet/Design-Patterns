@@ -272,3 +272,118 @@ int main()
         return 0;
     }
 }
+
+//= *= *= *= *= *= *= *= *= *= *= *= *= *= *= *= *= *= *= *= *= *= *= *= *= *= *= *= *= *= *
+//= *= *= *= *= *= *= *= *= *= *= *= *= *= *= *= *= *= *= *= *= *= *= *= *= *= *= *= *= *= *
+
+// --> Factory Abstract Design pattern -  It lets produce families of related objects without specifying
+// their concrete(classes that have all methods implemented and methods bodies are complete) classes.
+
+// In the below code, there is an example of falilies of classes i.e Bike and Car and different companies use
+// that property of Car and bike through interface.
+// The code has been written in C# language.
+
+using System;
+
+namespace AbstractFactory
+{
+
+public
+    interface Bike
+    {
+    }
+public
+    interface Car
+    {
+    }
+
+public
+    class Tatabike : Bike
+    {
+    public
+        void Manufacturer
+        {
+            Console.WriteLine("Tata Bike");
+        }
+    }
+
+    public class Tatacar : Car
+    {
+    public
+        void Manufacturer
+        {
+            Console.WriteLine("Tata Car");
+        }
+    }
+
+    public class Teslacar : Car
+    {
+    public
+        void Manufacturer
+        {
+            Console.WriteLine("Tesla Car");
+        }
+    }
+
+    public class Teslabike : Bike
+    {
+    public
+        void Manufacturer
+        {
+            Console.WriteLine("Tesla Bike");
+        }
+    }
+
+    public abstract class VehicleCompany
+    {
+    public
+        abstract Car GetCar() public abstract Bike GetBike()
+    }
+
+    public class TeslaCompany : VehicleCompany
+    {
+    public
+        override Bike GetBike()
+        {
+            return new Teslabike();
+        }
+    public
+        override Car GetCar()
+        {
+            return new Teslacar();
+        }
+    }
+
+    public class TataCompany : VehicleCompany
+    {
+    public
+        override Bike GetBike()
+        {
+            return new Tatabikebike();
+        }
+    public
+        override Car GetCar()
+        {
+            return new Tatacarcar();
+        }
+    }
+
+    public class Program
+    {
+    public
+        static void Main(string[] args)
+        {
+
+            VehicleCompany Tesla = new TeslaCompany();
+            Bike b = Tesla.GetBike();
+            Car c = Tesla.GetCar();
+
+            VehicleCompany Tata = new TataC();
+            Bike b = Tesla.GetBike();
+            Car c = Tesla.GetCar();
+
+            Console.ReadKey();
+        }
+    }
+
+}
